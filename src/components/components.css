@@ -1,0 +1,44 @@
+.linkBtn{ 
+    color: inherit ;
+    text-decoration : inherit
+}
+ 
+.div_shop0 {
+    min-width: 600px;
+    margin-top: -50px;
+    height: 400px;
+    background: linear-gradient(to right bottom,#c70039,#ba003c,#ac033d,#9e073e,#900c3e);
+    clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
+    background-image: url('E:/BOOT_CAMP_2020/shoe-store/src/components/images/tiles.svg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.h2_shop0{
+    padding-top: 150px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 3.75rem;   
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: white;
+    padding-right: 600px;
+    /* background-color: black; */
+}
+
+.h3_shop0{
+    margin-top: -40px;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: white;
+    padding-right: 100px;
+}
+
+.cart{
+     
+        margin-top: 150;
+        height : 400;
+        width : 600;
+        background-color : 'rgba(255,245,247';
+        text-align : "center";
+}

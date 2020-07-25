@@ -1,0 +1,7 @@
+body {
+    background: white;
+    margin: 0;
+    @media screen and (max-width: 480px);
+}
+
+
