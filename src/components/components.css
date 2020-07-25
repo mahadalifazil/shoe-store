@@ -9,7 +9,7 @@
     height: 400px;
     background: linear-gradient(to right bottom,#c70039,#ba003c,#ac033d,#9e073e,#900c3e);
     clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
-    background-image: url('E:/BOOT_CAMP_2020/shoe-store/src/components/images/tiles.svg');
+    background-image: url('./images/tiles.svg');
     background-attachment: fixed;
     background-size: cover;
 }
