@@ -10,6 +10,13 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import {Link} from 'react-router-dom';
 import './../components.css';
 
+import useWebAnimations , 
+
+{fadeInRightBig , shakeX ,swing ,backInUp ,flip , rotateInDownRight ,slideInRight ,slideInDown , slideInLeft ,lightSpeedInLeft } 
+
+from '@wellyshen/use-web-animations';
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -72,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Shop1(props) {
+
+  const { ref, playState, getAnimation } = useWebAnimations({...lightSpeedInLeft});
+
   const classes = useStyles();
    
   
@@ -79,20 +89,20 @@ export default function Shop1(props) {
   return (
     <div className={classes.root}>
 
-      <Grid container spacing={8} className={classes.gridContainer} >
+      <Grid ref = {ref}   container spacing={8} className={classes.gridContainer} >
         {Object.keys(Shoes).map(keyName => {
           return(
             
           <Grid item xs={12} sm={4} key={keyName}>
-            <Paper className={classes.paper}>
+            <Paper  className={classes.paper}>
               
             <div className={classes.gridDiv}></div> 
-              <div><img className={classes.cart} src={Shoes[keyName].img} height={250} width={250}  alt="shoes" /></div>
+              <div ><img className={classes.cart} src={Shoes[keyName].img} height={250} width={250}  alt="shoes" /></div>
              <div className= {classes.productTag}>
                <h3>{Shoes[keyName].name}</h3> 
                <h4>${Shoes[keyName].price}</h4>
                
-               <span><Link className='linkBtn' to={`/shop/${keyName}`}><DetailsBtn /></Link> <IconBtn/>  </span>
+               <span ><Link className='linkBtn' to={`/shop/${keyName}`}><DetailsBtn /></Link> <IconBtn/>  </span>
                </div>
              
             </Paper>
@@ -124,7 +134,7 @@ function DetailsBtn() {
   return (
     <div className={classes.root}>
       
-      <Button variant="contained"  style ={{background: '#C70039' , color : 'white'}}>
+      <Button  variant="contained"  style ={{background: '#C70039' , color : 'white'}}>
        DETAILS
         </Button>
       

@@ -6,7 +6,12 @@ import Typography from '@material-ui/core/Typography';
 import main_image from './../images/main_image.png';
 import dot_img from './../images/dot_img.png';
 import Button from '@material-ui/core/Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useWebAnimations , 
+
+{fadeInRightBig , shakeX ,swing ,backInUp ,flip , rotateInDownRight ,slideInRight , rotateIn ,slideInLeft , bounce} 
+
+from '@wellyshen/use-web-animations';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,13 +54,20 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 100,
         right: 0,
-        left : 100,
-        textAlign : "left",
+        left: 100,
+        textAlign: "left",
     }
 
 }));
 
 export default function Home1() {
+
+    const { element , playState1, getAnimation1 } = useWebAnimations({...bounce});
+    const { ref, playState, getAnimation } = useWebAnimations({...slideInLeft});
+    
+
+    console.log ("ref" ,ref);
+    console.log ("element" ,element);
     const classes = useStyles();
 
     return (
@@ -63,36 +75,38 @@ export default function Home1() {
             <Grid container spacing={0}>
                 <Grid item xs className={classes.grid1} >
                     <Typography className={classes.typography}>
-                        <img src={dot_img} alt="logo" className={classes.logo} />
+                        <img ref={element} src={dot_img} alt="logo" className={classes.logo} />
                         <p className={classes.para} > <p>ONE SHOE PAIR</p>
                             <p> CAN CHANGE</p>
-                            <p style = {{color : '#C70039'}}>YOUR LIFE</p> 
-                            <p> <BtnShopNow/> </p>
-                            </p>
-                           
+                            <p  style={{ color: '#C70039' }}>YOUR LIFE</p>
+                            <p> <BtnShopNow /> </p>
+                        </p>
+
                     </Typography>
                 </Grid>
 
                 <Grid item xs className={classes.grid}>
                     <Paper className={classes.paper} >
-                        <img style=
+                        <img ref = {ref} id="moving" style=
                             {{ width: 530, height: 470, marginTop: 120, marginLeft: 100 }}
 
                             src={main_image} alt="logo" className={classes.logo} />
                     </Paper>
                 </Grid>
-            </Grid>
+               
+            </Grid>           
         </div>
     );
 }
 
 function BtnShopNow() {
     return (
-        <Link to="/shop" style = {{ textDecorationLine : 'none'}}> 
-        <Button disableElevation variant="contained" 
-        style = {{ background: '#C70039' ,padding : 10, marginLeft : 10, color : 'white'}} >
-        SHOP NOW
+        <Link to="/shop" style={{ textDecorationLine: 'none' }}>
+            <Button disableElevation variant="contained"
+                style={{ background: '#C70039', padding: 10, marginLeft: 10, color: 'white' }} >
+                SHOP NOW
       </Button>
-      </Link>
+        </Link>
     );
-  }
+}
+
