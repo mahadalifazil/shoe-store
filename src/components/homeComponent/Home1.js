@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import useWebAnimations , 
 
-{fadeInRightBig , shakeX ,swing ,backInUp ,flip , rotateInDownRight ,slideInRight , rotateIn ,slideInLeft , bounce} 
+{slideInLeft , bounce} 
 
 from '@wellyshen/use-web-animations';
 
@@ -62,8 +62,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home1() {
 
-    const { element , playState1, getAnimation1 } = useWebAnimations({...bounce});
-    const { ref, playState, getAnimation } = useWebAnimations({...slideInLeft});
+    const {element} = useWebAnimations({...bounce});
+    const {ref} = useWebAnimations({...slideInLeft});
     
 
     console.log ("ref" ,ref);

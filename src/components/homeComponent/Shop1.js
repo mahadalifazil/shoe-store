@@ -12,7 +12,7 @@ import './../components.css';
 
 import useWebAnimations , 
 
-{fadeInRightBig , shakeX ,swing ,backInUp ,flip , rotateInDownRight ,slideInRight ,slideInDown , slideInLeft ,lightSpeedInLeft } 
+{lightSpeedInLeft } 
 
 from '@wellyshen/use-web-animations';
 
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Shop1(props) {
 
-  const { ref, playState, getAnimation } = useWebAnimations({...lightSpeedInLeft});
+  const {ref} = useWebAnimations({...lightSpeedInLeft});
 
   const classes = useStyles();
    

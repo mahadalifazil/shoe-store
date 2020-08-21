@@ -2,14 +2,14 @@ import React from 'react'
 import './../../components/components.css';
 import useWebAnimations , 
 
-{fadeInRightBig , shakeX ,swing ,backInUp ,flip , rotateInDownRight ,slideInRight ,slideInDown , slideInLeft , rubberBand ,backOutDown ,lightSpeedInRight } 
+{lightSpeedInRight } 
 
 from '@wellyshen/use-web-animations';
 
 
 export default function Shop0 () {
 
-    const { ref, playState, getAnimation } = useWebAnimations({...lightSpeedInRight});
+    const { ref } = useWebAnimations({...lightSpeedInRight});
     // const { ref1, playState1, getAnimation1 } = useWebAnimations({...slideInRight});
 
     return(
